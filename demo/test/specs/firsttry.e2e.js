@@ -1,6 +1,6 @@
-describe("ECommerce application", async () => {
+ describe("ECommerce application", async () => {
 
-    it("Login Fail Page", async () => {
+    xit("Login Fail Page", async () => {
         await browser.url("https://rahulshettyacademy.com/loginpagePractise/");
         console.log(await browser.getTitle);
         await expect(browser).toHaveTitleContaining("Rahul Shetty Academy");
@@ -27,6 +27,19 @@ describe("ECommerce application", async () => {
         await console.log(await $(".alert-danger").getText());
 
         await expect($("p")).toHaveTextContaining("username is rahulshettyacademy and Password is learning");
+    })
+
+    xit("Login Success page title", async () => {
+        await browser.url("https://rahulshettyacademy.com/loginpagePractise/");
+        await $("input[name='username']").setValue("rahulshettyacademy");
+        const password = $("//input[@type='password']");
+        await password.setValue("learning");
+        await $("#signInBtn").click(); //becomes signing
+
+        //wait until checkout button is displayed
+        await (await $(".btn-info")).waitForExist();
+        await expect(browser).toHaveUrlContaining("shop");
+
 
     })
 })
