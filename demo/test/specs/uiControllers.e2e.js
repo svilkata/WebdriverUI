@@ -1,8 +1,8 @@
 import { expect as expectchai } from "chai";
+// const expectchai = require("chai").expect;
 
 describe("UI Controls Test Suite", async () => {
-
-    it("UI Controls", async () => {
+    xit("UI Controls", async () => {
         await browser.url("https://rahulshettyacademy.com/loginpagePractise/");
         
         const radioButtons = await $$(".customradio");   //$$ взема всички елементи с този клас
@@ -11,6 +11,7 @@ describe("UI Controls Test Suite", async () => {
 
         const modal = await $(".modal-content");
         await modal.waitForDisplayed();
+
         await modal.$("#cancelBtn").click();
         console.log("Clicking cancel button do not change the already selected radiobutton Admin", await $$(".customradio")[0].$("input").isSelected());
 
@@ -29,7 +30,34 @@ describe("UI Controls Test Suite", async () => {
         await dropdown.selectByIndex(0);
         console.log("currently selected option", await dropdown.getValue());
 
+        await (await $("#cancelBtn")).click();
+        console.log(await (await $$(".customradio")[0].$("span")).isSelected());
+
         //chai assertions
         expectchai(await dropdown.getValue()).to.equal("stud");
+    })
+
+
+    xit("Dynamic Dropdown Controls", async () => {
+        await browser.url("https://rahulshettyacademy.com/AutomationPractice/");
+        await $("#autocomplete").setValue("ind");
+        await browser.pause(3000);
+        let items = await $$("[class='ui-menu-item'] div");
+        for (var i = 0; i < items.length; i++) {
+            if (await items[i].getText() === "India") {
+                await items[i].click();
+                await browser.pause(3000);
+            } 
+        }
+    })
+
+    it("Checkboxes Identification", async () => {
+        await browser.url("https://rahulshettyacademy.com/AutomationPractice/");
+        const elements = await $$("input[type='checkbox']");
+        await elements[1].click();
+        await browser.pause(3000);
+        console.log(await elements[1].isSelected());  //second should be selected only - returning true
+        console.log(await elements[2].isSelected()); //returning false
+        await browser.saveScreenshot("screenshot.png"); //using screenshot to see what is happening
     })
 })
