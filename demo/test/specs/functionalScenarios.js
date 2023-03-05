@@ -22,4 +22,31 @@ describe("Functional testing on application", async () => {
         await browser.acceptAlert(); //press ok the dialog box
         await browser.pause(3000);
     })
+
+    xit("Web table sort validation", async () => {
+        await browser.url("https://rahulshettyacademy.com/seleniumPractise/#/offers");
+        await $("tr th:nth-child(1)").click();
+
+        // retrieve list of veggie names into array A(click sorted)
+        const veggiesLocators = await $$('tr td:nth-child(1)'); //initial state of the list
+        const originalVeggiesNames = await Promise.all(veggiesLocators.map(async (veggie) => await veggie.getText()));
+        console.log("First five veggies click-sorted:", originalVeggiesNames);
+
+        // sort the array A -> Array B creating
+        const tempVeggies = originalVeggiesNames.slice(); //take the copy of the array
+        const sortedVeggies = tempVeggies.sort(); // Arrays are passed by reference, so tempVeggies are arranged also after sort operation
+        console.log("Sorted manually:", sortedVeggies);
+
+        // compare array A(click sorted) and array B (manual sort on the already click sorted array A)
+        expectchai(originalVeggiesNames).to.eql(sortedVeggies);
+    })
+
+    it("Web table filter validation", async () => {
+        await browser.url("https://rahulshettyacademy.com/seleniumPractise/#/offers");
+        await $("input[type='search']").setValue("tomato");
+        const veggieLocators = $$("tr td:nth-child(1)");
+        await expect(veggieLocators).toBeElementsArrayOfSize({eq:1}); //from webdriver UI
+        console.log(await veggieLocators[0].getText());
+        await expect(await veggieLocators[0]).toHaveTextContaining("omato");
+    })
 })
