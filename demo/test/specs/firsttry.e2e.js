@@ -37,7 +37,7 @@
         await $("#signInBtn").click(); //becomes signing
 
         //wait until checkout button is displayed
-        await (await $(".btn-info")).waitForExist();
+        await $(".btn-info").waitForExist();
         await expect(browser).toHaveUrlContaining("shop");
 
 

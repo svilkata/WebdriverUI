@@ -23,7 +23,7 @@ export const config = {
     // will be called from there.
     //
     specs: [
-        './test/specs/windowsFrames.js'
+        './test/specs/eCommerce.js'
     ],
     // Patterns to exclude.
     exclude: [
