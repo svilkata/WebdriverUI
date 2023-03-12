@@ -5,6 +5,7 @@ export const config = {
     // ====================
     // WebdriverIO supports running e2e tests as well as unit and component tests.
     runner: 'local',
+    // runner: 'browser',
     
     //
     // ==================
@@ -23,7 +24,8 @@ export const config = {
     // will be called from there.
     //
     specs: [
-        './test/specs/eCommerce.js'
+        './test/specs/poTest.js'
+        // './test/pageobjects/loginPage.js'
     ],
     // Patterns to exclude.
     exclude: [
@@ -138,7 +140,6 @@ export const config = {
     // see also: https://webdriver.io/docs/dot-reporter
     reporters: ['spec'],
 
-
     
     //
     // Options to be passed to Mocha.
@@ -223,8 +224,8 @@ export const config = {
      * Hook that gets executed _before_ a hook within the suite starts (e.g. runs before calling
      * beforeEach in Mocha)
      */
-    // beforeHook: function (test, context) {
-    // },
+    beforeHook: function (test, context) {
+    },
     /**
      * Hook that gets executed _after_ a hook within the suite starts (e.g. runs after calling
      * afterEach in Mocha)
