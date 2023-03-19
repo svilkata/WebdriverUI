@@ -10,8 +10,8 @@ let productcredentials = JSON.parse(fs.readFileSync('test/testdata/e2etest.json'
 
 describe("Page Object test", async () => {
 
-    xit("Login Fail Page", async () => {
-        await browser.url("https://rahulshettyacademy.com/loginpagePractise/");
+    it("Login Fail Page", async () => {
+        await browser.url("/loginpagePractise/");
         console.log(await browser.getTitle);
         await expect(browser).toHaveTitleContaining("Rahul Shetty Academy");
 
@@ -29,7 +29,7 @@ describe("Page Object test", async () => {
 
     productcredentials.forEach((productsToAdd) => {
         it("End to End Test", async () => {
-            await browser.url("https://rahulshettyacademy.com/loginpagePractise/");
+            await browser.url("/loginpagePractise/");
             await loginPage.login("rahulshettyacademy", "learning"); //we are here now: http://rahulshettyacademy.com/angularpractice/shop
             await shopPage.checkout.waitForExist(); //link Text and wait until checkout button is displayed
             await shopPage.addProductsToCart(productsToAdd.products);

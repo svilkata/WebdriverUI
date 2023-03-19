@@ -3,7 +3,7 @@ import { expect as expectchai } from "chai";
 describe("Ecommerce Application", async () => {
 
     it("End to End Test", async () => {
-        await browser.url("https://rahulshettyacademy.com/loginpagePractise/");
+        await browser.url("/loginpagePractise/");
         await $("input[name='username']").setValue("rahulshettyacademy");
         const password = $("//input[@type='password']");
         await password.setValue("learning");

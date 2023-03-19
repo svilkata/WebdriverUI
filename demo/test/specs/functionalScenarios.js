@@ -1,8 +1,8 @@
 import { expect as expectchai } from "chai";
 
 describe("Functional testing on application", async () => {
-    xit("Scrolling and mouse hover", async () => {
-        await browser.url("https://rahulshettyacademy.com/AutomationPractice/");
+    it("Scrolling and mouse hover", async () => {
+        await browser.url("/AutomationPractice/");
         await browser.pause(3000);
         await $("#mousehover").scrollIntoView(); //скролни до бутона с id mousehover
         await browser.pause(3000);
@@ -11,7 +11,7 @@ describe("Functional testing on application", async () => {
         await browser.pause(3000);
     })
 
-    xit("Dialog box pop up", async () => {
+    it("Dialog box pop up", async () => {
         await browser.url("https://only-testing-blog.blogspot.com/2014/09/selectable.html");
         await browser.pause(3000);
         $("button").doubleClick(); //this function does not work on Windows
@@ -23,8 +23,8 @@ describe("Functional testing on application", async () => {
         await browser.pause(3000);
     })
 
-    xit("Web table sort validation    Smoke", async () => {
-        await browser.url("https://rahulshettyacademy.com/seleniumPractise/#/offers");
+    it("Web table sort validation    Smoke", async () => {
+        await browser.url("/seleniumPractise/#/offers");
         await $("tr th:nth-child(1)").click();
 
         // retrieve list of veggie names into array A(click sorted)
@@ -42,7 +42,7 @@ describe("Functional testing on application", async () => {
     })
 
     it("Web table filter validation", async () => {
-        await browser.url("https://rahulshettyacademy.com/seleniumPractise/#/offers");
+        await browser.url("/seleniumPractise/#/offers");
         await $("input[type='search']").setValue("tomato");
         const veggieLocators = $$("tr td:nth-child(1)");
         await expect(veggieLocators).toBeElementsArrayOfSize({eq:1}); //from webdriver UI

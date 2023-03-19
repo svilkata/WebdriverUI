@@ -1,7 +1,7 @@
 describe("Windows and Frames Miscellanous", async () => {
 
-    xit("Parent and Child windows switch", async () => {
-        await browser.url("https://rahulshettyacademy.com/loginpagePractise/"); //window is open by automation WebdriverUI
+    it("Parent and Child windows switch", async () => {
+        await browser.url("/loginpagePractise/"); //window is open by automation WebdriverUI
         await browser.pause(3000);
         await $(".blinkingText").click();
 
@@ -33,7 +33,7 @@ describe("Windows and Frames Miscellanous", async () => {
     })
 
     it("Frames switch", async () => {
-        await browser.url("https://rahulshettyacademy.com/AutomationPractice/");
+        await browser.url("/AutomationPractice/");
         await $("#mousehover").scrollIntoView();
         const linksCount = await $$("a").length; //27
         console.log(linksCount);

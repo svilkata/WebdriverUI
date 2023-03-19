@@ -2,8 +2,8 @@ import { expect as expectchai } from "chai";
 // const expectchai = require("chai").expect;
 
 describe("UI Controls Test Suite", async () => {
-    xit("UI Controls", async () => {
-        await browser.url("https://rahulshettyacademy.com/loginpagePractise/");
+    it("UI Controls", async () => {
+        await browser.url("/loginpagePractise/");
         
         const radioButtons = await $$(".customradio");   //$$ взема всички елементи с този клас
         const userRadio = radioButtons[1];
@@ -25,21 +25,20 @@ describe("UI Controls Test Suite", async () => {
 
         //dropdown select
         const dropdown = await $("select.form-control");
-        dropdown.selectByAttribute('value', 'teach'); //селектира ни елемент от dropdown менюто
+        await dropdown.selectByAttribute('value', 'teach'); //селектира ни елемент от dropdown менюто
         await dropdown.selectByVisibleText("Consultant");
         await dropdown.selectByIndex(0);
         console.log("currently selected option", await dropdown.getValue());
 
-        await (await $("#cancelBtn")).click();
-        console.log(await (await $$(".customradio")[0].$("span")).isSelected());
+        console.log(await $$(".customradio")[0].$("span").isSelected());
 
         //chai assertions
         expectchai(await dropdown.getValue()).to.equal("stud");
     })
 
 
-    xit("Dynamic Dropdown Controls Smoke", async () => {
-        await browser.url("https://rahulshettyacademy.com/AutomationPractice/");
+    it("Dynamic Dropdown Controls Smoke", async () => {
+        await browser.url("/AutomationPractice/");
         await $("#autocomplete").setValue("ind");
         await browser.pause(3000);
         let items = await $$("[class='ui-menu-item'] div");
@@ -52,7 +51,7 @@ describe("UI Controls Test Suite", async () => {
     })
 
     it("Checkboxes Identification", async () => {
-        await browser.url("https://rahulshettyacademy.com/AutomationPractice/");
+        await browser.url("/AutomationPractice/");
         const elements = await $$("input[type='checkbox']");
         await elements[1].click();
         await browser.pause(3000);
