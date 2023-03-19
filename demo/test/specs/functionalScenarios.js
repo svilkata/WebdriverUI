@@ -23,7 +23,7 @@ describe("Functional testing on application", async () => {
         await browser.pause(3000);
     })
 
-    xit("Web table sort validation", async () => {
+    xit("Web table sort validation    Smoke", async () => {
         await browser.url("https://rahulshettyacademy.com/seleniumPractise/#/offers");
         await $("tr th:nth-child(1)").click();
 

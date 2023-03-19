@@ -38,7 +38,7 @@ describe("UI Controls Test Suite", async () => {
     })
 
 
-    xit("Dynamic Dropdown Controls", async () => {
+    xit("Dynamic Dropdown Controls Smoke", async () => {
         await browser.url("https://rahulshettyacademy.com/AutomationPractice/");
         await $("#autocomplete").setValue("ind");
         await browser.pause(3000);

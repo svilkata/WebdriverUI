@@ -24,8 +24,7 @@ export const config = {
     // will be called from there.
     //
     specs: [
-        './test/specs/poTest.js'
-        // './test/pageobjects/loginPage.js'
+        './test/specs/**/*.js'
     ],
     // Patterns to exclude.
     exclude: [
