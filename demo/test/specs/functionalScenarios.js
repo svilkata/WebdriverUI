@@ -47,6 +47,6 @@ describe("Functional testing on application", async () => {
         const veggieLocators = $$("tr td:nth-child(1)");
         await expect(veggieLocators).toBeElementsArrayOfSize({eq:1}); //from webdriver UI
         console.log(await veggieLocators[0].getText());
-        await expect(await veggieLocators[0]).toHaveTextContaining("omato");
+        await expect(await veggieLocators[0]).toHaveTextContaining("Tomto");
     })
 })

@@ -1,0 +1,41 @@
+{
+  "id": {
+    "sessionId": "1c391f4a9fc43b92f6ceb90b07b5d35c",
+    "elementId": "a220916c-406c-4f72-aee1-84b326c6b7ae",
+    "element-6066-11e4-a52e-4f735466cecf": "a220916c-406c-4f72-aee1-84b326c6b7ae",
+    "selector": "[id='courses-iframe']",
+    "parent": {
+      "sessionId": "1c391f4a9fc43b92f6ceb90b07b5d35c",
+      "capabilities": {
+        "acceptInsecureCerts": true,
+        "browserName": "chrome",
+        "browserVersion": "111.0.5563.111",
+        "chrome": {
+          "chromedriverVersion": "111.0.5563.64 (c710e93d5b63b7095afe8c2c17df34408078439d-refs/branch-heads/5563@{#995})",
+          "userDataDir": "C:\\Users\\svilk\\AppData\\Local\\Temp\\scoped_dir1720_865608188"
+        },
+        "goog:chromeOptions": {
+          "debuggerAddress": "localhost:53508"
+        },
+        "networkConnectionEnabled": false,
+        "pageLoadStrategy": "normal",
+        "platformName": "windows",
+        "proxy": {},
+        "setWindowRect": true,
+        "strictFileInteractability": false,
+        "timeouts": {
+          "implicit": 0,
+          "pageLoad": 300000,
+          "script": 30000
+        },
+        "unhandledPromptBehavior": "dismiss and notify",
+        "webauthn:extension:credBlob": true,
+        "webauthn:extension:largeBlob": true,
+        "webauthn:extension:minPinLength": true,
+        "webauthn:extension:prf": true,
+        "webauthn:virtualAuthenticators": true
+      }
+    },
+    "isReactElement": false
+  }
+}

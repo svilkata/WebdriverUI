@@ -1,0 +1,5 @@
+{
+  "error": "no such element",
+  "message": "no such element: Unable to locate element: {\"method\":\"partial link text\",\"selector\":\"Checkout\"}\n  (Session info: chrome=111.0.5563.111)",
+  "stacktrace": "Backtrace:\n\t(No symbol) [0x00DBDCE3]\n\t(No symbol) [0x00D539D1]\n\t(No symbol) [0x00C64DA8]\n\t(No symbol) [0x00C9019F]\n\t(No symbol) [0x00C903AB]\n\t(No symbol) [0x00CBEE62]\n\t(No symbol) [0x00CAAF14]\n\t(No symbol) [0x00CBD57C]\n\t(No symbol) [0x00CAACC6]\n\t(No symbol) [0x00C86F68]\n\t(No symbol) [0x00C880CD]\n\tGetHandleVerifier [0x01033832+2506274]\n\tGetHandleVerifier [0x01069794+2727300]\n\tGetHandleVerifier [0x0106E36C+2746716]\n\tGetHandleVerifier [0x00E66690+617600]\n\t(No symbol) [0x00D5C712]\n\t(No symbol) [0x00D61FF8]\n\t(No symbol) [0x00D620DB]\n\t(No symbol) [0x00D6C63B]\n\tBaseThreadInitThunk [0x766C00F9+25]\n\tRtlGetAppContainerNamedObjectPath [0x77567BBE+286]\n\tRtlGetAppContainerNamedObjectPath [0x77567B8E+238]\n"
+}

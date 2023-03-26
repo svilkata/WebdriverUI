@@ -1,5 +1,12 @@
  describe("ECommerce application", async () => {
 
+    xit("Login Fail Page retry mechanism", async function () {
+        this.retries(2);
+        await browser.url("/loginpagePractise/");
+        console.log(await browser.getTitle);
+        await expect(browser).toHaveTitleContaining("Rahul Shetty Academyzzz");
+    })
+
     it("Login Fail Page-Smoke-Sanity", async () => {
         await browser.url("/loginpagePractise/");
         console.log(await browser.getTitle);
